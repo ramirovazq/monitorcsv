@@ -1,4 +1,4 @@
-{% load static %}
+{% load static tags_tiempo %}
 
 
 <!-- CSS -->
@@ -16,7 +16,6 @@
 <table class="table">
     <thead>
         <th></th>
-        <th></th>
         <th>Fecha</th>
         <th>Status</th>
         <th>URL</th>
@@ -29,7 +28,11 @@
             <tr>
                 <td>{{ forloop.counter }}</td>            
             {% for data in registro %}
+                {% if forloop.first %}
+                <td>{{data|print_timestamp}}</td>
+                {% else %}
                 <td>{{data}}</td>
+                {% endif %}
             {% endfor %}
             </tr>
 
@@ -39,7 +42,11 @@
             <tr>
                 <td>{{ forloop.counter }}</td>            
             {% for data in registro %}
+                {% if forloop.first %}
+                <td>{{data|print_timestamp}}</td>
+                {% else %}
                 <td>{{data}}</td>
+                {% endif %}
             {% endfor %}
             </tr>
         {% endfor%}

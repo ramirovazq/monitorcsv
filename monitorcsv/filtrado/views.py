@@ -41,11 +41,13 @@ def ver_registros(request):
 #            logger.debug(form.cleaned_data['status'])
             registros_filtrados = []
 
+
+
             for item in registros:
                 if item[1] == form.cleaned_data['status'] or item[2] == form.cleaned_data['url']:
                     registros_filtrados.append(item)
           
-
+            '''
             for item in registros_filtrados:
                 # se filtra la fecha de inicio
                 if form.cleaned_data['fecha_inicio']:
@@ -58,7 +60,7 @@ def ver_registros(request):
                 if form.cleaned_data['fecha_fin']:
                     if float(item[0]) <= float(form.cleaned_data['fecha_fin']):
                         registros_filtrados.append(item)
-                    
+           '''         
 
            # print registros_filtrados
 
