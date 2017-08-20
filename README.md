@@ -6,7 +6,7 @@ Los requerimientos del proyecto
 - Django==1.11.4
 - requests==2.18.4
 
-# Instalacin
+# Instalacion
 #. Create tu virtualenv
 
 #. Instala las dependencies::
