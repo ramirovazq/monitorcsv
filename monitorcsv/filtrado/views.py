@@ -17,6 +17,7 @@ logger.setLevel(logging.DEBUG)
 
 
 def ver_registros(request):
+    from datetime import datetime
     db_csv = settings.ARCHIVO_CSV
     registros_filtrados = []
 
@@ -49,29 +50,16 @@ def ver_registros(request):
                 registros_filtrados = [item for item in registros_filtrados if item[2] == form.cleaned_data['url']]                   
 
 
-            logger.debug("------------ registros filtrados")
-            logger.debug(len(registros_filtrados))
-
-
             if form.cleaned_data['fecha_inicio']:
                 logger.debug("ENTRA FECHA INICIO")
-
-                registros_filtrados = [item for item in registros_filtrados if float(item[0]) >= float(form.cleaned_data['fecha_inicio'])]
+                fecha_inicio_epoch = float(form.cleaned_data['fecha_inicio'].strftime('%s'))
+                registros_filtrados = [item for item in registros_filtrados if float(item[0]) >= fecha_inicio_epoch]
                 logger.debug(len(registros_filtrados))
 
             if form.cleaned_data['fecha_fin']:
-                registros_filtrados = [item for item in registros_filtrados if float(item[0]) <= float(form.cleaned_data['fecha_fin'])]
+                fecha_fin_epoch = float(form.cleaned_data['fecha_fin'].strftime('%s'))
+                registros_filtrados = [item for item in registros_filtrados if float(item[0]) <= fecha_fin_epoch]
 
-            '''
-            
-            for item in registros_filtrados:
-                # se filtra la fecha de finn
-                if form.cleaned_data['fecha_fin']:
-                    if float(item[0]) <= float(form.cleaned_data['fecha_fin']):
-                        registros_filtrados.append(item)
-           '''         
-
-           # print registros_filtrados
 
         else:
             logger.debug(form.errors)
