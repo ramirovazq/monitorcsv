@@ -22,6 +22,16 @@ Los requerimientos del proyecto
 - LANGUAGE_CODE = 'es-MX'
 - TIME_ZONE = 'America/Mexico_City'
 
+#. 1. Entra al admin y llena la tabla SitioyFrecuencia 
+- llena la url y los segundos del sitio a monitorear
+
+#. 2. Ejecuta el comando:
+- $ python manage.py monitorea_sitios
+
+#. 3. Url donde se ven los registros del CSV:
+- http://127.0.0.1:8000/registros/ver/
+
+
 
 
     
