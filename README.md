@@ -30,7 +30,8 @@ Los requerimientos del proyecto
 
 #. 3. Url donde se ven los registros del CSV:
 - http://127.0.0.1:8000/registros/ver/
-- Los valores del filtro de fecha de inicio y fin, se escriben en EPOCH 
+- Los valores del filtro de fecha de inicio y fin, se escriben en el siguiente formato dd-mm-YYYY HH:MM:00 
+- Por ejemplo 20-08-2017 17:00:00
 
 
 
