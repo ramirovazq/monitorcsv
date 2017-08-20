@@ -15,6 +15,8 @@
 
 <table class="table">
     <thead>
+        <th></th>
+        <th></th>
         <th>Fecha</th>
         <th>Status</th>
         <th>URL</th>
@@ -23,16 +25,19 @@
     <tbody>
 
     {% if registros_filtrados %}
-        {% for registro in registros_filtrados %}
+            {% for registro in registros_filtrados %}
             <tr>
+                <td>{{ forloop.counter }}</td>            
             {% for data in registro %}
                 <td>{{data}}</td>
             {% endfor %}
             </tr>
-        {% endfor%}
+
+            {% endfor %}
     {% else %}
         {% for registro in registros %}
             <tr>
+                <td>{{ forloop.counter }}</td>            
             {% for data in registro %}
                 <td>{{data}}</td>
             {% endfor %}

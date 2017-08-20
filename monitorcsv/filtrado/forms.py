@@ -10,8 +10,14 @@ DATETIME_INPUT_FORMATS = ['%d-%m-%Y %H:%M:%S',    # '2006-10-25 14:30:59'
  '%Y-%m-%d',             # '2006-10-25'
 ]
 
-class BusquedaForm(ModelForm):
+class BusquedaForm(forms.Form):
 
-    class Meta:
-        model = Busqueda
-        fields = ['fecha_inicio', 'fecha_fin', 'status','url']
+    fecha_inicio = forms.CharField(label="Fecha de inicio", required=False,)
+    fecha_fin = forms.CharField(label="Fecha de inicio", required=False,)
+    status = forms.CharField(label="Status", required=False,)
+    url = forms.CharField(label="URL", required=False,)
+
+
+    #class Meta:
+     #   model = Busqueda
+      #  fields = ['fecha_inicio', 'fecha_fin', 'status','url']
