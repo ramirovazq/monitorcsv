@@ -6,9 +6,9 @@ from monitor.models import SitioyFrecuencia
 
 # Register your models here.
 
-#class SitioyFrecuenciaAdmin(admin.ModelAdmin):
- #   list_display = ['id', 'url', 'frecuencia_segundos']
+class SitioyFrecuenciaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'url', 'frecuencia_segundos']
 
 
-#admin.site.register(SitioyFrecuencia, SitioyFrecuenciaAdmin)
+admin.site.register(SitioyFrecuencia, SitioyFrecuenciaAdmin)
 
