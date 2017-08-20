@@ -10,18 +10,17 @@ Los requerimientos del proyecto
 #. Instala las dependencies::
     pip install -r requirements.txt
 
-#. Indica en el settings donde esta tu CSV
+#. Indica en el settings.py donde esta tu CSV
     ARCHIVO_CSV = '~/git/monitorcsv/monitorcsv/db.csv'
 
-#. Agrega a las INSTALLED_APPS
-        ...
-        'monitor',
-        'filtrado',
-        ...
+#. Agrega a las INSTALLED_APPS        
+- 'monitor',
+- 'filtrado',
         
-#. Configura tu pais        
-LANGUAGE_CODE = 'es-MX'
-TIME_ZONE = 'America/Mexico_City'
+        
+#. Configura tu pais en el settings.py
+- LANGUAGE_CODE = 'es-MX'
+- TIME_ZONE = 'America/Mexico_City'
 
 
 
