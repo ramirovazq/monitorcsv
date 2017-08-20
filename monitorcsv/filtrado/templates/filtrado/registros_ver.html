@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <th>Fecha</th>
+        <th>Status</th>
+        <th>URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for registro in registros %}
+        <tr>
+        {% for data in registro %}
+            <td>{{data}}</td>
+        {% endfor %}
+        </tr>
+    {% endfor%}
+    </tbody>
+</table>
+
