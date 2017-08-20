@@ -29,7 +29,7 @@
                 <td>{{ forloop.counter }}</td>            
             {% for data in registro %}
                 {% if forloop.first %}
-                <td>{{data|print_timestamp}}</td>
+                <td>{{data|print_timestamp}} [{{data}}]</td>
                 {% else %}
                 <td>{{data}}</td>
                 {% endif %}
@@ -43,7 +43,7 @@
                 <td>{{ forloop.counter }}</td>            
             {% for data in registro %}
                 {% if forloop.first %}
-                <td>{{data|print_timestamp}}</td>
+                <td>{{data|print_timestamp}} [{{data}}]</td>
                 {% else %}
                 <td>{{data}}</td>
                 {% endif %}
