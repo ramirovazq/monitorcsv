@@ -121,4 +121,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-ARCHIVO_CSV = '/home/ramiro/codigo/monitorcsv/db.csv'
+STATIC_ROOT = '/home/ramiro/git/monitorcsv/monitorcsv/monitorcsv/estaticos'
+ARCHIVO_CSV = '/home/ramiro/git/monitorcsv/monitorcsv/db.csv'
