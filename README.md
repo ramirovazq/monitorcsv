@@ -28,6 +28,9 @@ Los requerimientos del proyecto
 #. 2. Ejecuta el comando:
 - $ python manage.py monitorea_sitios
 
+#. 3. Url donde se ven los registros del CSV:
+- http://127.0.0.1:8000/registros/ver/
+
 
 
 
