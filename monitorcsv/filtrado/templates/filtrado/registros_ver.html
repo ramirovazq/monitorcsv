@@ -1,7 +1,17 @@
+{% load static %}
+
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}"/>
+
+
 <form action="{% url 'ver_registros' %}" method="post">
+{% csrf_token %}
 {{form}}
-<input type="submit" value="OK">
+<input type="submit" value="Filtrar" class="btn btn-primary">
+<a href="{% url 'ver_registros' %}" class="btn btn-default">Limpiar</a>
 </form>
+
 
 <table class="table">
     <thead>
@@ -11,13 +21,24 @@
     </tr>
     </thead>
     <tbody>
-    {% for registro in registros %}
-        <tr>
-        {% for data in registro %}
-            <td>{{data}}</td>
-        {% endfor %}
-        </tr>
-    {% endfor%}
+
+    {% if registros_filtrados %}
+        {% for registro in registros_filtrados %}
+            <tr>
+            {% for data in registro %}
+                <td>{{data}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor%}
+    {% else %}
+        {% for registro in registros %}
+            <tr>
+            {% for data in registro %}
+                <td>{{data}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor%}
+    {% endif %}
     </tbody>
 </table>
 

@@ -18,25 +18,40 @@ logger.setLevel(logging.DEBUG)
 def ver_registros(request):
     db_csv = settings.ARCHIVO_CSV
 
-    if request.method == 'POST':
-        form = BusquedaForm(request.POST)
-        if form.is_valid():
-            pass
-            #osea se hace filtrado
-        else:
-            logger.debug(form.errors)
-    else:
-        form = BusquedaForm()
-
+    ##### todos
     registros = []
     with open(db_csv, 'rb') as csvfile:
         archivo = csv.reader(csvfile, delimiter=str(';'))
         
         for row in archivo:
             registros.append(row)
+    ##### todos
 
 
-    context = {'registros':registros, 'form': form}
+    if request.method == 'POST':
+        form = BusquedaForm(request.POST)
+        if form.is_valid():
+            logger.debug("FORMULARIO VALIDADO")
+            logger.debug(form.cleaned_data)
+            logger.debug(form.cleaned_data['status'])
+            registros_filtrados = []
+
+            for item in registros:
+                print item
+                if item[1] == form.cleaned_data['status'] or item[2] == form.cleaned_data['url']:
+                    registros_filtrados.append(item)
+            print registros_filtrados
+
+        else:
+            logger.debug(form.errors)
+    else:
+        registros_filtrados = []
+        form = BusquedaForm()
+
+    context = {'registros':registros,
+               'form': form,
+               'registros_filtrados': registros_filtrados,
+              }
 
     return render(request, 'filtrado/registros_ver.html', context)
 

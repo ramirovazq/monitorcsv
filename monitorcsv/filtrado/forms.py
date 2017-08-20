@@ -14,4 +14,4 @@ class BusquedaForm(ModelForm):
 
     class Meta:
         model = Busqueda
-        fields = ['fecha_inicio', 'fecha_fin', 'status']
+        fields = ['fecha_inicio', 'fecha_fin', 'status','url']
